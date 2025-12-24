@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Paketlenmiş uzantı dosyaları
+*.crx
+*.pem
+*.zip
+
+# Backup dosyaları
+*-backup.js
+*.bak

@@ -1,0 +1,56 @@
+#firebase-event-tracker-panel {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  isolation: isolate !important;
+  pointer-events: auto !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+}
+
+.firebase-event-tracker-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(66, 133, 244, 0.9);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.firebase-event-tracker-badge.active {
+  background-color: rgba(76, 175, 80, 0.9);
+}
+
+.firebase-event-tracker-badge.inactive {
+  background-color: rgba(244, 67, 54, 0.9);
+}
+
+.firebase-event-tracker-badge-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.firebase-event-tracker-badge-text {
+  white-space: nowrap;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(66, 133, 244, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(66, 133, 244, 0); }
+}
+
+.firebase-event-tracker-badge.event-received {
+  animation: pulse 1s 1;
+}
