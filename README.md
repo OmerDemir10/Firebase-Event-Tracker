@@ -7,7 +7,7 @@ Firebase Analytics DebugView sayfasında tetiklenen event'leri takip eden Chrome
 - Firebase DebugView'da event'leri gerçek zamanlı takip
 - Event tetiklenme sayılarını gösterme
 - Önemli event'leri filtreleme (keyword bazlı)
-- Event listesini tablo formatında kopyalama (Excel'e yapıştırılabilir)
+- Event listesini tablo formatında kopyalama (Slack ve Excel'e yapıştırılabilir)
 - Sürüklenebilir panel
 
 ## 🚀 Kurulum
