@@ -66,7 +66,7 @@
         if (this._url && this._url.includes("analytics") && isTracking) {
           try {
             parseNetworkResponse(this.responseText);
-          } catch (e) {}
+          } catch (e) { }
         }
       });
       return originalSend.apply(this, arguments);
@@ -83,7 +83,7 @@
             .then((text) => {
               try {
                 parseNetworkResponse(text);
-              } catch (e) {}
+              } catch (e) { }
             });
         }
         return response;
@@ -381,7 +381,7 @@
 
     // Event listeners
     floatingPanel.querySelector(".fet-close").onclick = () => {
-      floatingPanel.style.display = "none";
+      floatingPanel.style.setProperty("display", "none", "important");
     };
 
     floatingPanel.querySelector(".fet-toggle").onclick = function () {
@@ -524,9 +524,9 @@
       pos2 = pos4 - e.clientY;
       pos3 = e.clientX;
       pos4 = e.clientY;
-      element.style.top = element.offsetTop - pos2 + "px";
-      element.style.left = element.offsetLeft - pos1 + "px";
-      element.style.right = "auto";
+      element.style.setProperty("top", element.offsetTop - pos2 + "px", "important");
+      element.style.setProperty("left", element.offsetLeft - pos1 + "px", "important");
+      element.style.setProperty("right", "auto", "important");
     }
 
     function closeDragElement() {
@@ -558,7 +558,7 @@
     updateStatus("İzleniyor...");
 
     // Background'a iframe taraması başlatmasını söyle
-    chrome.runtime.sendMessage({ action: "startScanAll" }).catch(() => {});
+    chrome.runtime.sendMessage({ action: "startScanAll" }).catch(() => { });
   }
 
   // Tracking durdur
@@ -569,11 +569,11 @@
     console.log("⏹️ Tracking durduruldu");
     updateStatus(
       "Durduruldu. " +
-        Object.keys(eventsCount).length +
-        " farklı event bulundu."
+      Object.keys(eventsCount).length +
+      " farklı event bulundu."
     );
 
-    chrome.runtime.sendMessage({ action: "stopScanAll" }).catch(() => {});
+    chrome.runtime.sendMessage({ action: "stopScanAll" }).catch(() => { });
   }
 
   // Periyodik tarama
@@ -613,7 +613,7 @@
           addEventFromDOM(name, el);
         }
       });
-    } catch (e) {}
+    } catch (e) { }
   }
 
   // Event adı geçerli mi?
