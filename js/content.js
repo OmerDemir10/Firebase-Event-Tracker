@@ -406,7 +406,7 @@
 
     // Kopyala butonları
     floatingPanel.querySelector("#fet-copy-all").onclick = () => {
-      const header = "Event Adı\tTetiklenme Sayısı\n";
+      const header = "TÜM OLAYLAR\t \n*** Event Adı ***\t*** Tetiklenme Sayısı ***\n";
       const eventData = Object.keys(eventsCount)
         .sort()
         .map((name) => `${name}\t${eventsCount[name]}`)
@@ -417,7 +417,7 @@
     };
 
     floatingPanel.querySelector("#fet-copy-important").onclick = () => {
-      const header = "Event Adı\tTetiklenme Sayısı\n";
+      const header = "ÖNEMLİ OLAYLAR\t \n*** Event Adı ***\t*** Tetiklenme Sayısı ***\n";
       const eventData = Object.keys(eventsCount)
         .filter((name) =>
           keywords.some((kw) => name.toLowerCase().includes(kw.toLowerCase()))
